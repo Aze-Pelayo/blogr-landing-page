@@ -1,3 +1,191 @@
+/* VARIABLES */
+* {
+  /* Ensure that all elements are sized in an intuitive way */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+hr {
+  width: 100%;
+  margin: 1em 0;
+  border: 0;
+  border-top: 0.5px solid #c8c8cb;
+}
+
+.h1 {
+  font: 300 26px "Overpass", sans-serif;
+  color: #ffffff;
+}
+
+.root {
+  padding: 1em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  height: 3.5em;
+  width: 100%;
+  margin: 2em 0;
+  padding: 0 2em;
+}
+.header__logo img {
+  height: 100%;
+}
+.header__navButton {
+  height: 2.25em;
+  width: 2.25em;
+  cursor: pointer;
+  border: none;
+  background: url("../assets/icon-hamburger.svg") no-repeat center center/contain;
+  outline: none;
+  transition: 0.2s ease;
+}
+.header__navButton.active {
+  background: url("../assets/icon-close.svg") no-repeat center center/contain;
+  transition: 0.2s ease;
+}
+.header__nav {
+  display: none;
+}
+.header__nav.expanded {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8em;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 4em);
+  padding: 2em;
+  margin: 0 auto;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+}
+.header__nav__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.header__nav__group__dropdownBtn {
+  margin: 0.5em 0;
+  padding: 0 1em;
+  font: 600 18px "Overpass", sans-serif;
+  color: #1f3f5b;
+  position: relative;
+  border: none;
+  background: none;
+  outline: none;
+}
+.header__nav__group__dropdownBtn::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 50%;
+  top: 30%;
+  left: 90%;
+  z-index: -1;
+  background: url("../assets/icon-arrow-dark.svg") no-repeat;
+  transform: rotate(360deg);
+}
+.header__nav__group__dropdownBtn.expanded {
+  color: #4b5862;
+}
+.header__nav__group__dropdownBtn.expanded::before {
+  top: 10%;
+  transform: rotate(180deg);
+}
+.header__nav__group__dropdownList {
+  display: none;
+  margin: 0.5em;
+  padding: 1em;
+  width: 100%;
+  border: 10px;
+  border-radius: 10px;
+  list-style-type: none;
+  text-align: center;
+  background-color: #c8c8cb;
+}
+.header__nav__group__dropdownList.expanded {
+  display: block;
+}
+.header__nav__group__dropdownList__item {
+  margin: 1em 0;
+}
+.header__nav__group__dropdownList__item a {
+  font: 600 16px "Overpass", sans-serif;
+  color: #4b5862;
+  text-decoration: none;
+}
+.header__nav__group__link {
+  margin: 0.5em 0;
+  padding: 0 1em;
+  font: 600 18px "Overpass", sans-serif;
+  color: #1f3f5b;
+  text-decoration: none;
+}
+.header__nav__group__link--cta {
+  padding: 1em 2.5em;
+  border-radius: 30px;
+  background: #ff8f70;
+  background: linear-gradient(120deg, #ff8f70 0%, #ff3d50 100%);
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 90vh;
+  width: 100%;
+  z-index: -1;
+  padding: 2em;
+  border-bottom-left-radius: 115px;
+  text-align: center;
+  background: #ff8f70;
+  background: url("../assets/bg-pattern-intro-mobile.svg") no-repeat 45% 25%, linear-gradient(120deg, #ff8f70 0%, #ff3d50 100%);
+  background-size: 250%;
+}
+.intro__text {
+  margin: 1em 0;
+  font: 16px "Overpass", sans-serif;
+  color: #ffffff;
+}
+.intro__ctaContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.intro__ctaContainer__cta {
+  margin: 2em 0.5em;
+  padding: 0.75em 0.5em;
+  width: 50%;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #ff525d;
+  font: 700 16px "Ubuntu", sans-serif;
+  text-decoration: none;
+}
+.intro__ctaContainer__cta--noBg {
+  border: 1px solid #ffffff;
+  background: none;
+  color: #ffffff;
+}
 
 /*# sourceMappingURL=style.css.map */

@@ -1,60 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Blogr Landing Page - A frontendmentor.io challenge">
-    <meta name="author" content="Aze Pelayo">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="Blogr Landing Page - A frontendmentor.io challenge" />
+		<meta name="author" content="Aze Pelayo" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="assets/favicon.png"/>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="main.js" defer></script>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/png" href="assets/favicon.png" />
+		<link rel="stylesheet" href="css/style.css" />
+		<script src="main.js" defer></script>
 
-    <title>Blogr</title>
-</head>
+		<title>Blogr</title>
+	</head>
 
-<body>
-    <div class="root">
-        <header>
-            <a href="#">
-                <img src="./assets/logo.svg" alt="Go to home page">
-            </a>
-            <!-- Hamburger Menu Icon -->
-            <button>
-                <div></div>
-            </button>
+	<body>
+		<div class="root">
+			<header class="header">
+				<a href="#" class="header__logo">
+					<img src="./assets/logo.svg" alt="Go to home page" />
+				</a>
+				<!-- Hamburger Menu Icon -->
+				<button class="header__navButton" aria-label="Open Navigation"></button>
 
-            <nav>
-                <div>
-                    <button>Product</button>
-                    <ul>
-                        <li>
-                            <a image.pngimage.pnghref="#">Overview</a>
-                        </li>
-                        <li>
-                            <a href="#">Pricing</a>
-                        </li>
-                        <li>
-                            <a href="#">Marketplace</a>
-                        </li>
-                        <li>
-                            <a href="#">Features</a>
-                        </li>
-                        <li>
-                            <a href="#">Integrationis</a>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-                    <button>Login</button>
-                    <button>Sign Up</button>
-                </div>
-            </nav>
-        </header>
-    </div>
-</body>
+				<nav class="header__nav">
+					<div class="header__nav__group">
+						<button class="header__nav__group__dropdownBtn">Product</button>
+						<ul class="header__nav__group__dropdownList">
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Overview</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Pricing</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Marketplace</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Features</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Integrations</a>
+							</li>
+						</ul>
+
+						<button class="header__nav__group__dropdownBtn">Company</button>
+						<ul class="header__nav__group__dropdownList">
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">About</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Team</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Blog</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Careers</a>
+							</li>
+						</ul>
+
+						<button class="header__nav__group__dropdownBtn">Connect</button>
+						<ul class="header__nav__group__dropdownList">
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Contact</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">Newsletter</a>
+							</li>
+							<li class="header__nav__group__dropdownList__item">
+								<a href="#">LinkedIn</a>
+							</li>
+						</ul>
+					</div>
+
+					<hr />
+
+					<div class="header__nav__group">
+						<a href="#" class="header__nav__group__link">Login</a>
+						<a href="#" class="header__nav__group__link header__nav__group__link--cta"
+							>Sign Up</a
+						>
+					</div>
+				</nav>
+			</header>
+
+			<main>
+				<section class="intro">
+					<h1 class="h1">A modern publishing platform</h1>
+					<p class="intro__text">Grow your audience and build your online brand</p>
+
+					<div class="intro__ctaContainer">
+						<a href="#" class="intro__ctaContainer__cta">Start for Free</a>
+						<a href="#" class="intro__ctaContainer__cta intro__ctaContainer__cta--noBg"
+							>Learn More</a
+						>
+					</div>
+				</section>
+			</main>
+		</div>
+	</body>
 </html>
