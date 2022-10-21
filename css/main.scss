@@ -78,7 +78,7 @@ hr {
 		transition: 0.2s ease;
 	}
 
-	&__navButton.active {
+	&__burgerButton.active {
 		background: url("../assets/icon-close.svg") no-repeat center center/contain;
 		transition: 0.2s ease;
 	}
@@ -90,7 +90,7 @@ hr {
 			flex-direction: column;
 			align-items: center;
 			justify-content: center;
-			position: fixed;
+			position: absolute;
 			top: 8em;
 			left: 0;
 			right: 0;
@@ -150,6 +150,7 @@ hr {
 			list-style-type: none;
 			text-align: center;
 			background-color: $grayish-blue;
+			max-height: 100%;
 
 			&.expanded {
 				display: block;
@@ -157,6 +158,7 @@ hr {
 		}
 
 		&__dropdownListItem {
+			position: relative;
 			margin: 1em 0;
 
 			a {
@@ -221,9 +223,9 @@ hr {
 	&__img {
 		width: 100vw;
 		&--fit {
-			width: 100%;
+			max-width: 390px;
 			position: absolute;
-			top: -12em;
+			top: -45vw;
 		}
 	}
 
@@ -282,13 +284,13 @@ hr {
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
-	padding: 3em 2em;
+	padding: 6em 2em;
 	border-top-right-radius: 115px;
 	text-align: center;
 	background: $d-black-blue;
 
 	&__linkList {
-		margin: 2em;
+		margin: 1em;
 		list-style-type: none;
 	}
 
