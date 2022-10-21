@@ -16,12 +16,24 @@ hr {
 }
 
 .h1 {
-  font: 300 26px "Overpass", sans-serif;
+  margin-top: 4em;
+  font: 300 36px "Overpass", sans-serif;
   color: #ffffff;
 }
 
-.root {
-  padding: 1em;
+.h2 {
+  margin: 2em 0;
+  font: 600 28px "Overpass", sans-serif;
+  color: #1f3f5b;
+}
+.h2--white {
+  color: #ffffff;
+}
+
+.h3 {
+  margin: 1em 0;
+  font: 600 28px "Overpass", sans-serif;
+  color: #1f3f5b;
 }
 
 .header {
@@ -29,15 +41,18 @@ hr {
   justify-content: space-between;
   align-items: center;
   z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 3.5em;
   width: 100%;
-  margin: 2em 0;
+  margin: 3em 0;
   padding: 0 2em;
 }
 .header__logo img {
   height: 100%;
 }
-.header__navButton {
+.header__burgerButton {
   height: 2.25em;
   width: 2.25em;
   cursor: pointer;
@@ -77,7 +92,7 @@ hr {
   justify-content: center;
   width: 100%;
 }
-.header__nav__group__dropdownBtn {
+.header__nav__dropdownBtn {
   margin: 0.5em 0;
   padding: 0 1em;
   font: 600 18px "Overpass", sans-serif;
@@ -87,7 +102,7 @@ hr {
   background: none;
   outline: none;
 }
-.header__nav__group__dropdownBtn::before {
+.header__nav__dropdownBtn::before {
   content: "";
   position: absolute;
   width: 10%;
@@ -98,14 +113,14 @@ hr {
   background: url("../assets/icon-arrow-dark.svg") no-repeat;
   transform: rotate(360deg);
 }
-.header__nav__group__dropdownBtn.expanded {
+.header__nav__dropdownBtn.expanded {
   color: #4b5862;
 }
-.header__nav__group__dropdownBtn.expanded::before {
+.header__nav__dropdownBtn.expanded::before {
   top: 10%;
   transform: rotate(180deg);
 }
-.header__nav__group__dropdownList {
+.header__nav__dropdownList {
   display: none;
   margin: 0.5em;
   padding: 1em;
@@ -116,25 +131,25 @@ hr {
   text-align: center;
   background-color: #c8c8cb;
 }
-.header__nav__group__dropdownList.expanded {
+.header__nav__dropdownList.expanded {
   display: block;
 }
-.header__nav__group__dropdownList__item {
+.header__nav__dropdownListItem {
   margin: 1em 0;
 }
-.header__nav__group__dropdownList__item a {
+.header__nav__dropdownListItem a {
   font: 600 16px "Overpass", sans-serif;
   color: #4b5862;
   text-decoration: none;
 }
-.header__nav__group__link {
+.header__nav__link {
   margin: 0.5em 0;
   padding: 0 1em;
   font: 600 18px "Overpass", sans-serif;
   color: #1f3f5b;
   text-decoration: none;
 }
-.header__nav__group__link--cta {
+.header__nav__link--cta {
   padding: 1em 2.5em;
   border-radius: 30px;
   background: #ff8f70;
@@ -143,36 +158,31 @@ hr {
   color: #ffffff;
 }
 
-.intro {
+.section {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 90vh;
   width: 100%;
-  z-index: -1;
   padding: 2em;
-  border-bottom-left-radius: 115px;
   text-align: center;
+}
+.section--intro {
+  height: 90vh;
+  border-bottom-left-radius: 115px;
   background: #ff8f70;
   background: url("../assets/bg-pattern-intro-mobile.svg") no-repeat 45% 25%, linear-gradient(120deg, #ff8f70 0%, #ff3d50 100%);
   background-size: 250%;
 }
-.intro__text {
+.section__text {
   margin: 1em 0;
   font: 16px "Overpass", sans-serif;
+  color: #4b5862;
+}
+.section__text--white {
   color: #ffffff;
 }
-.intro__ctaContainer {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 100%;
-}
-.intro__ctaContainer__cta {
+.section__cta {
   margin: 2em 0.5em;
   padding: 0.75em 0.5em;
   width: 50%;
@@ -182,10 +192,19 @@ hr {
   font: 700 16px "Ubuntu", sans-serif;
   text-decoration: none;
 }
-.intro__ctaContainer__cta--noBg {
+.section__cta--noBg {
   border: 1px solid #ffffff;
   background: none;
   color: #ffffff;
+}
+.section__body--flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+}
+.section__group {
+  margin: 2em 0;
 }
 
 /*# sourceMappingURL=style.css.map */
