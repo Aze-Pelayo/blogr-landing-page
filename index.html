@@ -30,62 +30,70 @@
 				<button class="header__burgerButton" aria-label="Open Navigation"></button>
 
 				<nav class="header__nav">
-					<div class="header__nav__group">
-						<button class="header__nav__dropdownBtn">Product</button>
-						<ul class="header__nav__dropdownList">
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Overview</a>
+					<ul class="header__nav__wrapper">
+						<div class="header__nav__group">
+							<li class="header__nav__item">
+								<button class="header__nav__dropdownBtn">Product</button>
+								<ul class="header__nav__dropdownList">
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Overview</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Pricing</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Marketplace</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Features</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Integrations</a>
+									</li>
+								</ul>
 							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Pricing</a>
-							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Marketplace</a>
-							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Features</a>
-							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Integrations</a>
-							</li>
-						</ul>
 
-						<button class="header__nav__dropdownBtn">Company</button>
-						<ul class="header__nav__dropdownList">
-							<li class="header__nav__dropdownListItem">
-								<a href="#">About</a>
+							<li class="header__nav__item">
+								<button class="header__nav__dropdownBtn">Company</button>
+								<ul class="header__nav__dropdownList">
+									<li class="header__nav__dropdownListItem">
+										<a href="#">About</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Team</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Blog</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Careers</a>
+									</li>
+								</ul>
 							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Team</a>
-							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Blog</a>
-							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Careers</a>
-							</li>
-						</ul>
 
-						<button class="header__nav__dropdownBtn">Connect</button>
-						<ul class="header__nav__dropdownList">
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Contact</a>
+							<li class="header__nav__item">
+								<button class="header__nav__dropdownBtn">Connect</button>
+								<ul class="header__nav__dropdownList">
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Contact</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">Newsletter</a>
+									</li>
+									<li class="header__nav__dropdownListItem">
+										<a href="#">LinkedIn</a>
+									</li>
+								</ul>
 							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">Newsletter</a>
-							</li>
-							<li class="header__nav__dropdownListItem">
-								<a href="#">LinkedIn</a>
-							</li>
-						</ul>
-					</div>
+						</div>
 
-					<hr />
+						<hr />
 
-					<div class="header__nav__group">
-						<a href="#" class="header__nav__link">Login</a>
-						<a href="#" class="header__nav__link header__nav__link--cta">Sign Up</a>
-					</div>
+						<div class="header__nav__group">
+							<a href="#" class="header__nav__link">Login</a>
+							<a href="#" class="header__nav__link header__nav__link--cta">Sign Up</a>
+						</div>
+					</ul>
 				</nav>
 			</header>
 
@@ -137,11 +145,20 @@
 				</section>
 
 				<section class="section section--infra">
-					<img src="./assets/illustration-phones.svg" alt="" class="section__img section__img--fit">
+					<img
+						src="./assets/illustration-phones.svg"
+						alt=""
+						class="section__img section__img--fit"
+					/>
 
 					<div class="section__body section__body--flexColumn">
 						<h2 class="h2 h2--white h2--infra">State of the Art Infrastructure</h2>
-						<p class="section__text section__text--white">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.</p>
+						<p class="section__text section__text--white">
+							With reliability and speed in mind, worldwide data centers provide the
+							backbone for ultra-fast connectivity. This ensures your site will load
+							instantly, no matter where your readers are, keeping your site
+							competitive.
+						</p>
 					</div>
 				</section>
 
@@ -154,18 +171,23 @@
 
 					<div class="section__body">
 						<div class="section__group">
-							<h3 class="h3"> Free, open, simple</h3>
+							<h3 class="h3">Free, open, simple</h3>
 							<p class="section__text">
-								Blogr is a free and open source application backed by a large community of helpful developers. It supports 
-								features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
-								and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+								Blogr is a free and open source application backed by a large
+								community of helpful developers. It supports features such as code
+								syntax highlighting, RSS feeds, social media integration,
+								third-party commenting tools, and works seamlessly with Google
+								Analytics. The architecture is clean and is relatively easy to
+								learn.
 							</p>
 						</div>
 
 						<div class="section__group">
 							<h3 class="h3">Powerful tooling</h3>
 							<p class="section__text">
-								Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but capable of producing even the most complicated sites.
+								Batteries included. We built a simple and straightforward CLI tool
+								that makes customization and deployment a breeze, but capable of
+								producing even the most complicated sites.
 							</p>
 						</div>
 					</div>
@@ -178,9 +200,7 @@
 				</a>
 
 				<ul class="footer__linkList">
-					<p class="footer__listTitle">
-						Product
-					</p>
+					<p class="footer__listTitle">Product</p>
 					<li class="footer__link">
 						<a href="#">Overview</a>
 					</li>
@@ -198,9 +218,7 @@
 					</li>
 				</ul>
 				<ul class="footer__linkList">
-					<p class="footer__listTitle">
-						Company
-					</p>
+					<p class="footer__listTitle">Company</p>
 					<li class="footer__link">
 						<a href="#">About</a>
 					</li>
@@ -215,9 +233,7 @@
 					</li>
 				</ul>
 				<ul class="footer__linkList">
-					<p class="footer__listTitle">
-						Connect
-					</p>
+					<p class="footer__listTitle">Connect</p>
 					<li class="footer__link">
 						<a href="#">Contact</a>
 					</li>

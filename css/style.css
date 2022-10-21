@@ -90,12 +90,19 @@ hr {
   border-radius: 10px;
   filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
 }
+.header__nav__wrapper {
+  width: 100%;
+  list-style-type: none;
+}
 .header__nav__group {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.header__nav__item {
   width: 100%;
+  text-align: center;
 }
 .header__nav__dropdownBtn {
   margin: 0.5em 0;
@@ -133,11 +140,10 @@ hr {
 }
 .header__nav__dropdownList {
   display: none;
-  margin: 0.5em;
   padding: 1em;
   width: 100%;
-  border: 10px;
-  border-radius: 10px;
+  margin: 1em 0;
+  border-radius: 5px;
   list-style-type: none;
   text-align: center;
   background-color: #c8c8cb;
@@ -304,10 +310,13 @@ hr {
   }
   .header__nav {
     display: flex;
-    justify-content: space-between;
-    flex-direction: row;
     position: static;
     width: 100%;
+  }
+  .header__nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
   .header__nav__group {
     flex-direction: row;
@@ -330,7 +339,8 @@ hr {
   .header__nav__dropdownList {
     display: none;
     position: absolute;
-    width: initial;
+    width: 12em;
+    margin: 1em;
     text-align: left;
     background-color: #ffffff;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.1));
