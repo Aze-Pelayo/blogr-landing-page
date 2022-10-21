@@ -39,7 +39,7 @@ hr {
 }
 
 .h3 {
-	margin: 1em 0;
+	margin: 1em 0 0.5em 0;
 	font: 600 28px $Overpass;
 	color: $dark-blue;
 }
@@ -274,5 +274,35 @@ hr {
 
 	&__group {
 		margin: 2em 0;
+	}
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 3em 2em;
+	border-top-right-radius: 115px;
+	text-align: center;
+	background: $d-black-blue;
+
+	&__linkList {
+		margin: 2em;
+		list-style-type: none;
+	}
+
+	&__listTitle {
+		margin: 1.5em 0;
+		font: 600 16px $Overpass;
+		color: $white;
+	}
+
+	&__link a {
+		margin: 0.5em 0;
+		font: 300 16px $Overpass;
+		color: $white;
+		text-decoration: none;
+		line-height: 2em;
 	}
 }

@@ -36,7 +36,7 @@ hr {
 }
 
 .h3 {
-  margin: 1em 0;
+  margin: 1em 0 0.5em 0;
   font: 600 28px "Overpass", sans-serif;
   color: #1f3f5b;
 }
@@ -238,6 +238,33 @@ hr {
 }
 .section__group {
   margin: 2em 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3em 2em;
+  border-top-right-radius: 115px;
+  text-align: center;
+  background: #25252d;
+}
+.footer__linkList {
+  margin: 2em;
+  list-style-type: none;
+}
+.footer__listTitle {
+  margin: 1.5em 0;
+  font: 600 16px "Overpass", sans-serif;
+  color: #ffffff;
+}
+.footer__link a {
+  margin: 0.5em 0;
+  font: 300 16px "Overpass", sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 2em;
 }
 
 /*# sourceMappingURL=style.css.map */
