@@ -1,8 +1,8 @@
 (function navListeners() {
-    const burgerIcon = document.querySelector(".header__navButton");
+    const burgerIcon = document.querySelector(".header__burgerButton");
     const nav = document.querySelector(".header__nav");
-    const dropdown = document.querySelectorAll(".header__nav__group__dropdownBtn");
-    const dropdownList = document.querySelectorAll(".header__nav__group__dropdownList")
+    const dropdown = document.querySelectorAll(".header__nav__dropdownBtn");
+    const dropdownList = document.querySelectorAll(".header__nav__dropdownList")
 
     // Toggle Burger Icon and Nav
     burgerIcon.addEventListener("click", () => {
