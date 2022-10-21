@@ -16,7 +16,7 @@ hr {
 }
 
 .h1 {
-  margin-top: 4em;
+  margin-top: 10vw;
   font: 300 36px "Overpass", sans-serif;
   color: #ffffff;
 }
@@ -107,6 +107,12 @@ hr {
   background: none;
   outline: none;
 }
+@media screen and (min-width: 768px) {
+  .header__nav__dropdownBtn {
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
 .header__nav__dropdownBtn::before {
   content: "";
   position: absolute;
@@ -135,13 +141,11 @@ hr {
   list-style-type: none;
   text-align: center;
   background-color: #c8c8cb;
-  max-height: 100%;
 }
 .header__nav__dropdownList.expanded {
   display: block;
 }
 .header__nav__dropdownListItem {
-  position: relative;
   margin: 1em 0;
 }
 .header__nav__dropdownListItem a {
@@ -155,6 +159,12 @@ hr {
   font: 600 18px "Overpass", sans-serif;
   color: #1f3f5b;
   text-decoration: none;
+}
+@media screen and (min-width: 768px) {
+  .header__nav__link {
+    font-size: 16px;
+    color: #ffffff;
+  }
 }
 .header__nav__link--cta {
   padding: 1em 2.5em;
@@ -176,7 +186,7 @@ hr {
   text-align: center;
 }
 .section--intro {
-  height: 90vh;
+  height: 92vh;
   margin-top: 0;
   border-bottom-left-radius: 115px;
   background: #ff8f70;
@@ -217,7 +227,7 @@ hr {
   border-radius: 30px;
   background: #ffffff;
   color: #ff525d;
-  font: 700 16px "Ubuntu", sans-serif;
+  font: 700 16px "Overpass", sans-serif;
   text-decoration: none;
 }
 .section__cta--noBg {
@@ -267,6 +277,82 @@ hr {
   color: #ffffff;
   text-decoration: none;
   line-height: 2em;
+}
+
+@media screen and (min-width: 481px) {
+  .section__img {
+    width: 80%;
+  }
+  .section__img--fit {
+    top: -35%;
+  }
+}
+@media screen and (min-width: 768px) {
+  hr {
+    display: none;
+  }
+
+  .header {
+    justify-content: flex-start;
+    padding: 0 10vw;
+  }
+  .header__logo img {
+    margin-right: 2em;
+  }
+  .header__burgerButton {
+    display: none;
+  }
+  .header__nav {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    position: static;
+    width: 100%;
+  }
+  .header__nav__group {
+    flex-direction: row;
+    width: initial;
+  }
+  .header__nav__dropdownBtn {
+    margin: 0 0.5em;
+  }
+  .header__nav__dropdownBtn::before {
+    background: url("../assets/icon-arrow-light.svg") no-repeat;
+  }
+  .header__nav__dropdownBtn.expanded {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  .header__nav__dropdownBtn.expanded::before {
+    top: 10%;
+    transform: rotate(180deg);
+  }
+  .header__nav__dropdownList {
+    display: none;
+    position: absolute;
+    width: initial;
+    text-align: left;
+    background-color: #ffffff;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.1));
+  }
+  .header__nav__dropdownList.expanded {
+    display: block;
+  }
+  .header__nav__dropdownListItem {
+    display: list-item;
+    position: relative;
+    margin: 1em;
+  }
+  .header__nav__dropdownListItem a {
+    font: 300 16px "Overpass", sans-serif;
+    color: #4b5862;
+  }
+  .header__nav__link--cta {
+    margin-left: 1em;
+    padding: 0.75em 2.5em;
+    background: #ffffff;
+    color: #ff525d;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

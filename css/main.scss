@@ -17,7 +17,7 @@ hr {
 }
 
 .h1 {
-	margin-top: 4em;
+	margin-top: 10vw;
 	font: 300 36px $Overpass;
 	color: $white;
 }
@@ -49,6 +49,11 @@ hr {
 	padding: 0 1em;
 	font: 600 18px $Overpass;
 	color: $dark-blue;
+
+	@media screen and (min-width: 768px) {
+		font-size: 16px;
+		color: $white;
+	}
 }
 
 .header {
@@ -150,7 +155,6 @@ hr {
 			list-style-type: none;
 			text-align: center;
 			background-color: $grayish-blue;
-			max-height: 100%;
 
 			&.expanded {
 				display: block;
@@ -158,7 +162,6 @@ hr {
 		}
 
 		&__dropdownListItem {
-			position: relative;
 			margin: 1em 0;
 
 			a {
@@ -199,7 +202,7 @@ hr {
 	text-align: center;
 
 	&--intro {
-		height: 90vh;
+		height: 92vh;
 		margin-top: 0;
 		border-bottom-left-radius: 115px;
 		background: rgb(255, 143, 112);
@@ -247,7 +250,7 @@ hr {
 		border-radius: 30px;
 		background: $white;
 		color: $red;
-		font: 700 16px $Ubuntu;
+		font: 700 16px $Overpass;
 		text-decoration: none;
 
 		&--noBg {
@@ -306,5 +309,99 @@ hr {
 		color: $white;
 		text-decoration: none;
 		line-height: 2em;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.section {
+		&__img {
+			width: 80%;
+			
+			&--fit {
+				top: -35%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 768px) {
+	hr {
+		display: none;
+	}
+
+	.header {
+		justify-content: flex-start;
+		padding: 0 10vw;
+
+		&__logo img {
+			margin-right: 2em;
+		}
+	
+		&__burgerButton {
+			display: none;
+		}
+	
+		&__nav {
+			display: flex;
+			justify-content: space-between;
+			flex-direction: row;
+			position: static;
+			width: 100%;
+	
+			&__group {
+				flex-direction: row;
+				width: initial;
+			}
+	
+			&__dropdownBtn {	
+				margin: 0 0.5em;
+				&::before {
+					background: url("../assets/icon-arrow-light.svg") no-repeat;
+				}
+	
+				&.expanded {
+					color: $white;
+					text-decoration: underline;
+	
+					&::before {
+						top: 10%;
+						transform: rotate(180deg);
+					}
+				}
+			}
+	
+			&__dropdownList {
+				display: none;
+				position: absolute;
+				width: initial;
+				text-align: left;
+				background-color: $white;
+				filter: drop-shadow(10px 10px 10px rgba(0, 0.1, 0.1, 0.1));
+	
+				&.expanded {
+					display: block;
+				}
+			}
+	
+			&__dropdownListItem {
+				display: list-item;
+				position: relative;
+				margin: 1em;
+	
+				a {
+					font: 300 16px $Overpass;
+					color: $d-grayish-blue;
+				}
+			}
+	
+			&__link {
+				&--cta {
+					margin-left: 1em;
+					padding: 0.75em 2.5em;
+					background: $white;
+					color: $red;
+				}
+			}
+		}
 	}
 }
