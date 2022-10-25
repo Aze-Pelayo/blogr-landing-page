@@ -9,6 +9,7 @@
 	padding: 0;
 }
 
+
 hr {
 	width: 100%;
 	margin: 1em 0;
@@ -17,8 +18,8 @@ hr {
 }
 
 .h1 {
-	margin-top: 10vw;
-	font: 300 36px $Overpass;
+	margin-top: 25vw;
+	font: 600 34px $Overpass;
 	color: $white;
 }
 
@@ -50,7 +51,7 @@ hr {
 	font: 600 18px $Overpass;
 	color: $dark-blue;
 
-	@media screen and (min-width: 768px) {
+	@media screen and (min-width: 769px) {
 		font-size: 16px;
 		color: $white;
 	}
@@ -205,13 +206,13 @@ hr {
 	justify-content: center;
 	flex-direction: column;
 	width: 100%;
-	padding: 1em 2em;
 	margin: 2.5em 0;
 	text-align: center;
 
 	&--intro {
 		height: 92vh;
 		margin-top: 0;
+		padding: 0 2em;
 		border-bottom-left-radius: 115px;
 		background: rgb(255, 143, 112);
 		background: url("../assets/bg-pattern-intro-mobile.svg") no-repeat 45% 25%,
@@ -238,6 +239,18 @@ hr {
 			position: absolute;
 			top: -45vw;
 		}
+
+		&--right {
+			height: 20em;
+			background: url("../assets/illustration-editor-mobile.svg") no-repeat center
+				center/contain;
+		}
+
+		&--left {
+			height: 20em;
+			background: url("../assets/illustration-laptop-mobile.svg") no-repeat center
+				center/contain;
+		}
 	}
 
 	&__text {
@@ -253,12 +266,11 @@ hr {
 
 	&__cta {
 		margin: 2em 0.5em;
-		padding: 0.75em 0.5em;
-		width: 50%;
+		padding: 1em 2.5em;
 		border-radius: 30px;
 		background: $white;
 		color: $red;
-		font: 700 16px $Overpass;
+		font: 600 16px $Overpass;
 		text-decoration: none;
 
 		&--noBg {
@@ -269,20 +281,24 @@ hr {
 	}
 
 	&__body {
-		&--flex {
-			display: flex;
-			align-items: center;
-			justify-content: space-around;
-			width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+		width: 100%;
+
+		&--intro {
+			flex-direction: row ;
+			justify-content: center;
 		}
 
-		&--flexColumn {
-			display: flex;
-			align-items: center;
-			justify-content: space-around;
-			flex-direction: column;
-			width: 100%;
+		&--flex {
+			justify-content: center;
 		}
+	}
+
+	&__content {
+		padding: 1em 2em;
 	}
 
 	&__group {
@@ -321,6 +337,10 @@ hr {
 }
 
 @media screen and (min-width: 481px) {
+	.h1 {
+		margin-top: 10vw;
+	}
+
 	.section {
 		&__img {
 			width: 80%;
@@ -332,9 +352,18 @@ hr {
 	}
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
 	hr {
 		display: none;
+	}
+
+	.h1 {
+		margin-top: 0;
+		font-size: 48px;
+	}
+
+	.h3 {
+		font-size: 24px;
 	}
 
 	.header {
@@ -342,6 +371,7 @@ hr {
 		padding: 0 10vw;
 
 		&__logo img {
+			width: 90%;
 			margin-right: 2em;
 		}
 
@@ -413,6 +443,79 @@ hr {
 					padding: 0.75em 2.5em;
 					background: $white;
 					color: $red;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.section {
+		height: 100vh;
+		margin: 5em 0;
+		padding: 1em 10vw;
+		text-align: left;
+		overflow-x: hidden;
+
+		&--intro {
+			height: 92vh;
+			margin: 0 0 5em 0;
+			background: url("../assets/bg-pattern-intro-desktop.svg") no-repeat 22% 55%,
+				linear-gradient(120deg, rgba(255, 143, 112, 1) 0%, rgba(255, 61, 80, 1) 100%);
+			text-align: center;
+		}
+
+		&__body {
+			position: relative;
+			flex-direction: row;
+
+			&--intro {
+				justify-content: center;
+			}
+
+			&--flex {
+				justify-content: flex-start;
+			}
+
+			&--flexEnd {
+				justify-content: flex-end;
+			}
+
+		}
+
+		&__cta {
+			padding: 0.75em 1em;
+			width: initial;
+		}
+
+		&__content {
+			width: 50%;
+			padding: 0;
+		}
+
+		&__img {
+
+			&--right {
+				position: absolute;
+				left: 50%;
+				height: 90vh;
+				width: 95%;
+				order: 2;
+				z-index: -2;
+				background: url("../assets/illustration-editor-desktop.svg") no-repeat center
+				center/contain;
+			}
+
+			&--left {
+				position: absolute;
+				left: -50%;
+				height: 90vh;
+				width: 95%;
+				z-index: -2;
+				background: url("../assets/illustration-laptop-desktop.svg") no-repeat center
+				center/contain;
+
+				&+.section__content {
+					justify-content: flex-end;
 				}
 			}
 		}
