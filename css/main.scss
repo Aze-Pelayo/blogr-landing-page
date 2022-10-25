@@ -1,3 +1,606 @@
-@import '_base.scss';
-@import '_component.scss';
-@import '_layout.scss';
+@import "_base.scss";
+
+* {
+	/* Ensure that all elements are sized in an intuitive way */
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+hr {
+	width: 100%;
+	margin: 1em 0;
+	border: 0;
+	border-top: 0.5px solid $grayish-blue;
+}
+
+.h1 {
+	margin-top: 25vw;
+	font: 600 34px $Overpass;
+	color: $white;
+}
+
+.h2 {
+	margin: 1em 0;
+	font: 600 28px $Overpass;
+	color: $dark-blue;
+
+	&--white {
+		color: $white;
+	}
+
+	&--infra {
+		color: $white;
+		font-size: 36px;
+		margin: 1em 0 0.5em 0;
+	}
+}
+
+.h3 {
+	margin: 1em 0 0.5em 0;
+	font: 600 28px $Overpass;
+	color: $dark-blue;
+}
+
+@mixin navLink {
+	margin: 1em 0;
+	padding: 0 1em;
+	font: 600 18px $Overpass;
+	color: $dark-blue;
+	cursor: pointer;
+
+	@media screen and (min-width: 769px) {
+		font: 600 16px $Ubuntu;
+		font-size: 16px;
+		color: $white;
+
+		&:hover,
+		&:active {
+			text-decoration: underline;
+		}
+	}
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 2;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 3.5em;
+	width: 100%;
+	margin: 3em 0;
+	padding: 0 2em;
+
+	&__logo img {
+		height: 100%;
+	}
+
+	&__burgerButton {
+		height: 2.25em;
+		width: 2.25em;
+		border: none;
+		background: url("../assets/icon-hamburger.svg") no-repeat center center/contain;
+		outline: none;
+		cursor: pointer;
+		transition: 0.2s ease;
+	}
+
+	&__burgerButton.active {
+		background: url("../assets/icon-close.svg") no-repeat center center/contain;
+		transition: 0.2s ease;
+	}
+
+	&__nav {
+		display: none;
+		&.expanded {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 8em;
+			left: 0;
+			right: 0;
+			width: calc(100vw - 4em);
+			padding: 2em;
+			margin: 0 auto;
+			z-index: 2;
+			background-color: $white;
+			border-radius: 10px;
+			filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+		}
+
+		&__wrapper {
+			width: 100%;
+			list-style-type: none;
+		}
+
+		&__group {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&__item {
+			width: 100%;
+			text-align: center;
+		}
+
+		&__dropdownBtn {
+			@include navLink;
+			position: relative;
+			border: none;
+			background: none;
+			outline: none;
+
+			&::before {
+				content: "";
+				position: absolute;
+				width: 10%;
+				height: 50%;
+				top: 30%;
+				left: 90%;
+				z-index: -1;
+				background: url("../assets/icon-arrow-dark.svg") no-repeat;
+				transition: all 0.3s ease;
+			}
+
+			&.expanded {
+				color: $d-grayish-blue;
+
+				&::before {
+					top: 10%;
+					transform: rotate(-180deg);
+				}
+			}
+		}
+
+		&__dropdownList {
+			max-height: 0;
+			width: 100%;
+			border-radius: 5px;
+			list-style-type: none;
+			text-align: center;
+			background-color: $grayish-blue;
+			overflow: hidden;
+			transition: max-height 0.2s ease;
+
+			&.expanded {
+				max-height: 20em;			
+			}
+		}
+
+		&__dropdownListItem {
+			margin: 1.5em 0;
+
+			a {
+				font: 300 16px $Overpass;
+				color: $d-grayish-blue;
+				text-decoration: none;
+				cursor: pointer;
+
+				&:hover,
+				&:active {
+					font-weight: 600;
+				}
+			}
+		}
+
+		&__link {
+			@include navLink;
+			text-decoration: none;
+
+			&--cta {
+				padding: 1em 2.5em;
+				border-radius: 30px;
+				background: rgb(255, 143, 112);
+				background: linear-gradient(
+					120deg,
+					rgba(255, 143, 112, 1) 0%,
+					rgba(255, 61, 80, 1) 100%
+				);
+				font-size: 16px;
+				color: $white;
+
+				&:hover,
+				&:active {
+					background: $grayish-blue;
+					color: $white;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.section {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	margin: 2.5em 0;
+	text-align: center;
+
+	&--intro {
+		height: 92vh;
+		margin-top: 0;
+		padding: 0 2em;
+		border-bottom-left-radius: 115px;
+		background: rgb(255, 143, 112);
+		background: url("../assets/bg-pattern-intro-mobile.svg") no-repeat 45% 25%,
+			linear-gradient(120deg, rgba(255, 143, 112, 1) 0%, rgba(255, 61, 80, 1) 100%);
+		background-size: 250%;
+	}
+
+	&--infra {
+		position: relative;
+		margin-top: 15em;
+		padding: 12em 2em 8em 2em;
+		border-bottom-left-radius: 115px;
+		border-top-right-radius: 115px;
+		background: rgb(44, 45, 63);
+		background: url("../assets/bg-pattern-circles.svg") no-repeat -8em -15em,
+			linear-gradient(120deg, rgba(44, 45, 63, 1) 0%, rgba(63, 65, 100, 1) 100%);
+		background-size: 160%;
+	}
+
+	&__img {
+		width: 100vw;
+		&--fit {
+			max-width: 390px;
+			position: absolute;
+			top: -45vw;
+		}
+
+		&--right {
+			height: 20em;
+			background: url("../assets/illustration-editor-mobile.svg") no-repeat center
+				center/contain;
+		}
+
+		&--left {
+			height: 20em;
+			background: url("../assets/illustration-laptop-mobile.svg") no-repeat center
+				center/contain;
+		}
+	}
+
+	&__text {
+		margin: 1em 0;
+		font: 16px $Overpass;
+		color: $d-grayish-blue;
+		line-height: 2em;
+
+		&--white {
+			color: $white;
+		}
+	}
+
+	&__cta {
+		margin: 2em 0.5em;
+		padding: 1em;
+		border-radius: 30px;
+		background: $white;
+		color: $red;
+		font: 600 16px $Ubuntu;
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			background: $grayish-blue;
+			color: $white;
+		}
+
+		&--noBg {
+			border: 1px solid $white;
+			background: none;
+			color: $white;
+
+			&:hover,
+			&:active {
+				background: $white;
+				color: $light-red;
+			}
+		}
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		flex-direction: column;
+		width: 100%;
+
+		&--intro {
+			flex-direction: row;
+			justify-content: center;
+		}
+
+		&--flex {
+			justify-content: center;
+		}
+	}
+
+	&__content {
+		padding: 1em 2em;
+	}
+
+	&__group {
+		margin: 2em 0;
+	}
+}
+
+.footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 6em 2em;
+	border-top-right-radius: 115px;
+	text-align: center;
+	background: $d-black-blue;
+
+	&__linkList {
+		margin: 1em;
+		list-style-type: none;
+	}
+
+	&__listTitle {
+		margin: 1.5em 0;
+		font: 600 16px $Ubuntu;
+		color: $white;
+	}
+
+	&__link a {
+		margin: 0.5em 0;
+		font: 300 16px $Overpass;
+		color: $white;
+		text-decoration: none;
+		line-height: 2em;
+		cursor: pointer;
+	}
+
+	&__link a:hover,
+	&__link a:focus,
+	&__link a:active {
+		text-decoration: underline;
+	}
+}
+
+@media screen and (min-width: 481px) {
+	.h1 {
+		margin-top: 10vw;
+	}
+
+	.section {
+		&__cta {
+			padding: 1em 1.5em;
+		}
+
+		&__img {
+			width: 80%;
+
+			&--fit {
+				top: -35%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width: 769px) {
+	hr {
+		display: none;
+	}
+
+	.h1 {
+		margin-top: 0;
+		font-size: 62px;
+	}
+
+	.h2 {
+		font-size: 36px;
+	}
+
+	.h3 {
+		font-size: 28px;
+	}
+
+	.header {
+		justify-content: flex-start;
+		padding: 0 10vw;
+
+		&__logo img {
+			width: 90%;
+			margin-right: 2em;
+		}
+
+		&__burgerButton {
+			display: none;
+		}
+
+		&__nav {
+			display: flex;
+			position: static;
+			width: 100%;
+
+			&__wrapper {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+			}
+
+			&__group {
+				flex-direction: row;
+				width: initial;
+			}
+
+			&__dropdownBtn {
+				margin: 0 0.5em;
+				&::before {
+					background: url("../assets/icon-arrow-light.svg") no-repeat;
+				}
+
+				&.expanded {
+					color: $white;
+					text-decoration: underline;
+
+					&::before {
+						top: 10%;
+						transform: rotate(180deg);
+					}
+				}
+			}
+
+			&__dropdownList {
+				position: absolute;
+				width: 12em;
+				margin: 1em;
+				text-align: left;
+				background-color: $white;
+				filter: drop-shadow(10px 10px 10px rgba(0, 0.1, 0.1, 0.1));
+			}
+
+			&__dropdownListItem {
+				display: list-item;
+				position: relative;
+				margin: 1em;
+
+				a {
+					font: 300 16px $Overpass;
+					color: $d-grayish-blue;
+				}
+			}
+
+			&__link {
+				&--cta {
+					margin-left: 1em;
+					padding: 0.75em 2vw;
+					background: $white;
+					color: $red;
+					text-align: center;
+				}
+			}
+		}
+	}
+
+	.section {
+		height: 100vh;
+		margin: 5em 0;
+		padding: 1em 10vw;
+		text-align: left;
+		overflow: hidden;
+
+		&--intro {
+			height: 92vh;
+			margin: 0 0 5em 0;
+			background: url("../assets/bg-pattern-intro-desktop.svg") no-repeat 22% 55%,
+				linear-gradient(120deg, rgba(255, 143, 112, 1) 0%, rgba(255, 61, 80, 1) 100%);
+			text-align: center;
+		}
+
+		&--infra {
+			height: 50vh;
+			flex-direction: row;
+			justify-content: flex-end;
+			overflow: visible;
+		}
+
+		&__body {
+			position: relative;
+			flex-direction: row;
+
+			&--intro {
+				justify-content: center;
+			}
+
+			&--infra {
+				flex-direction: column;
+				align-items: flex-start;
+				width: 45%;
+			}
+
+			&--flex {
+				justify-content: flex-start;
+			}
+
+			&--flexEnd {
+				justify-content: flex-end;
+			}
+		}
+
+		&__text {
+			&--intro {
+				font-size: 24px;
+			}
+		}
+
+		&__cta {
+			padding: 0.75em 1em;
+			width: initial;
+		}
+
+		&__content {
+			width: 50%;
+			padding: 0;
+		}
+
+		&__img {
+			&--fit {
+				position: relative;
+				top: 0;
+				left: -10%;
+				width: 55%;
+				max-width: 645px;
+			}
+
+			&--right {
+				position: absolute;
+				left: 55%;
+				height: 90vh;
+				width: 95%;
+				order: 2;
+				z-index: -2;
+				background: url("../assets/illustration-editor-desktop.svg") no-repeat center
+					center/contain;
+			}
+
+			&--left {
+				position: absolute;
+				left: -50%;
+				height: 90vh;
+				width: 95%;
+				z-index: -2;
+				background: url("../assets/illustration-laptop-desktop.svg") no-repeat center
+					center/contain;
+
+				& + .section__content {
+					justify-content: flex-end;
+				}
+			}
+		}
+	}
+
+	.footer {
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 6em 10vw;
+		text-align: left;
+		gap: 12vw;
+
+		&__linkList {
+			margin: 0;
+		}
+
+		&__listTitle {
+			margin-top: 0;
+		}
+	}
+}

@@ -1,3 +1,519 @@
+/* VARIABLES */
+* {
+  /* Ensure that all elements are sized in an intuitive way */
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
+hr {
+  width: 100%;
+  margin: 1em 0;
+  border: 0;
+  border-top: 0.5px solid #c8c8cb67;
+}
+
+.h1 {
+  margin-top: 25vw;
+  font: 600 34px "Overpass", sans-serif;
+  color: #ffffff;
+}
+
+.h2 {
+  margin: 1em 0;
+  font: 600 28px "Overpass", sans-serif;
+  color: #1f3f5b;
+}
+.h2--white {
+  color: #ffffff;
+}
+.h2--infra {
+  color: #ffffff;
+  font-size: 36px;
+  margin: 1em 0 0.5em 0;
+}
+
+.h3 {
+  margin: 1em 0 0.5em 0;
+  font: 600 28px "Overpass", sans-serif;
+  color: #1f3f5b;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 3.5em;
+  width: 100%;
+  margin: 3em 0;
+  padding: 0 2em;
+}
+.header__logo img {
+  height: 100%;
+}
+.header__burgerButton {
+  height: 2.25em;
+  width: 2.25em;
+  border: none;
+  background: url("../assets/icon-hamburger.svg") no-repeat center center/contain;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.header__burgerButton.active {
+  background: url("../assets/icon-close.svg") no-repeat center center/contain;
+  transition: 0.2s ease;
+}
+.header__nav {
+  display: none;
+}
+.header__nav.expanded {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 8em;
+  left: 0;
+  right: 0;
+  width: calc(100vw - 4em);
+  padding: 2em;
+  margin: 0 auto;
+  z-index: 2;
+  background-color: #ffffff;
+  border-radius: 10px;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.25));
+}
+.header__nav__wrapper {
+  width: 100%;
+  list-style-type: none;
+}
+.header__nav__group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header__nav__item {
+  width: 100%;
+  text-align: center;
+}
+.header__nav__dropdownBtn {
+  margin: 1em 0;
+  padding: 0 1em;
+  font: 600 18px "Overpass", sans-serif;
+  color: #1f3f5b;
+  cursor: pointer;
+  position: relative;
+  border: none;
+  background: none;
+  outline: none;
+}
+@media screen and (min-width: 769px) {
+  .header__nav__dropdownBtn {
+    font: 600 16px "Ubuntu", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .header__nav__dropdownBtn:hover, .header__nav__dropdownBtn:active {
+    text-decoration: underline;
+  }
+}
+.header__nav__dropdownBtn::before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  height: 50%;
+  top: 30%;
+  left: 90%;
+  z-index: -1;
+  background: url("../assets/icon-arrow-dark.svg") no-repeat;
+  transition: all 0.3s ease;
+}
+.header__nav__dropdownBtn.expanded {
+  color: #4b5862;
+}
+.header__nav__dropdownBtn.expanded::before {
+  top: 10%;
+  transform: rotate(-180deg);
+}
+.header__nav__dropdownList {
+  max-height: 0;
+  width: 100%;
+  border-radius: 5px;
+  list-style-type: none;
+  text-align: center;
+  background-color: #c8c8cb67;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
+}
+.header__nav__dropdownList.expanded {
+  max-height: 20em;
+}
+.header__nav__dropdownListItem {
+  margin: 1.5em 0;
+}
+.header__nav__dropdownListItem a {
+  font: 300 16px "Overpass", sans-serif;
+  color: #4b5862;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header__nav__dropdownListItem a:hover, .header__nav__dropdownListItem a:active {
+  font-weight: 600;
+}
+.header__nav__link {
+  margin: 1em 0;
+  padding: 0 1em;
+  font: 600 18px "Overpass", sans-serif;
+  color: #1f3f5b;
+  cursor: pointer;
+  text-decoration: none;
+}
+@media screen and (min-width: 769px) {
+  .header__nav__link {
+    font: 600 16px "Ubuntu", sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+  }
+  .header__nav__link:hover, .header__nav__link:active {
+    text-decoration: underline;
+  }
+}
+.header__nav__link--cta {
+  padding: 1em 2.5em;
+  border-radius: 30px;
+  background: #ff8f70;
+  background: linear-gradient(120deg, #ff8f70 0%, #ff3d50 100%);
+  font-size: 16px;
+  color: #ffffff;
+}
+.header__nav__link--cta:hover, .header__nav__link--cta:active {
+  background: #c8c8cb67;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin: 2.5em 0;
+  text-align: center;
+}
+.section--intro {
+  height: 92vh;
+  margin-top: 0;
+  padding: 0 2em;
+  border-bottom-left-radius: 115px;
+  background: #ff8f70;
+  background: url("../assets/bg-pattern-intro-mobile.svg") no-repeat 45% 25%, linear-gradient(120deg, #ff8f70 0%, #ff3d50 100%);
+  background-size: 250%;
+}
+.section--infra {
+  position: relative;
+  margin-top: 15em;
+  padding: 12em 2em 8em 2em;
+  border-bottom-left-radius: 115px;
+  border-top-right-radius: 115px;
+  background: #2c2d3f;
+  background: url("../assets/bg-pattern-circles.svg") no-repeat -8em -15em, linear-gradient(120deg, #2c2d3f 0%, #3f4164 100%);
+  background-size: 160%;
+}
+.section__img {
+  width: 100vw;
+}
+.section__img--fit {
+  max-width: 390px;
+  position: absolute;
+  top: -45vw;
+}
+.section__img--right {
+  height: 20em;
+  background: url("../assets/illustration-editor-mobile.svg") no-repeat center center/contain;
+}
+.section__img--left {
+  height: 20em;
+  background: url("../assets/illustration-laptop-mobile.svg") no-repeat center center/contain;
+}
+.section__text {
+  margin: 1em 0;
+  font: 16px "Overpass", sans-serif;
+  color: #4b5862;
+  line-height: 2em;
+}
+.section__text--white {
+  color: #ffffff;
+}
+.section__cta {
+  margin: 2em 0.5em;
+  padding: 1em;
+  border-radius: 30px;
+  background: #ffffff;
+  color: #ff525d;
+  font: 600 16px "Ubuntu", sans-serif;
+  text-decoration: none;
+}
+.section__cta:hover, .section__cta:active {
+  background: #c8c8cb67;
+  color: #ffffff;
+}
+.section__cta--noBg {
+  border: 1px solid #ffffff;
+  background: none;
+  color: #ffffff;
+}
+.section__cta--noBg:hover, .section__cta--noBg:active {
+  background: #ffffff;
+  color: #ff7a85;
+}
+.section__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+}
+.section__body--intro {
+  flex-direction: row;
+  justify-content: center;
+}
+.section__body--flex {
+  justify-content: center;
+}
+.section__content {
+  padding: 1em 2em;
+}
+.section__group {
+  margin: 2em 0;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 6em 2em;
+  border-top-right-radius: 115px;
+  text-align: center;
+  background: #25252d;
+}
+.footer__linkList {
+  margin: 1em;
+  list-style-type: none;
+}
+.footer__listTitle {
+  margin: 1.5em 0;
+  font: 600 16px "Ubuntu", sans-serif;
+  color: #ffffff;
+}
+.footer__link a {
+  margin: 0.5em 0;
+  font: 300 16px "Overpass", sans-serif;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 2em;
+  cursor: pointer;
+}
+.footer__link a:hover, .footer__link a:focus, .footer__link a:active {
+  text-decoration: underline;
+}
+
+@media screen and (min-width: 481px) {
+  .h1 {
+    margin-top: 10vw;
+  }
+
+  .section__cta {
+    padding: 1em 1.5em;
+  }
+  .section__img {
+    width: 80%;
+  }
+  .section__img--fit {
+    top: -35%;
+  }
+}
+@media screen and (min-width: 769px) {
+  hr {
+    display: none;
+  }
+
+  .h1 {
+    margin-top: 0;
+    font-size: 62px;
+  }
+
+  .h2 {
+    font-size: 36px;
+  }
+
+  .h3 {
+    font-size: 28px;
+  }
+
+  .header {
+    justify-content: flex-start;
+    padding: 0 10vw;
+  }
+  .header__logo img {
+    width: 90%;
+    margin-right: 2em;
+  }
+  .header__burgerButton {
+    display: none;
+  }
+  .header__nav {
+    display: flex;
+    position: static;
+    width: 100%;
+  }
+  .header__nav__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .header__nav__group {
+    flex-direction: row;
+    width: initial;
+  }
+  .header__nav__dropdownBtn {
+    margin: 0 0.5em;
+  }
+  .header__nav__dropdownBtn::before {
+    background: url("../assets/icon-arrow-light.svg") no-repeat;
+  }
+  .header__nav__dropdownBtn.expanded {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  .header__nav__dropdownBtn.expanded::before {
+    top: 10%;
+    transform: rotate(180deg);
+  }
+  .header__nav__dropdownList {
+    position: absolute;
+    width: 12em;
+    margin: 1em;
+    text-align: left;
+    background-color: #ffffff;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.1));
+  }
+  .header__nav__dropdownListItem {
+    display: list-item;
+    position: relative;
+    margin: 1em;
+  }
+  .header__nav__dropdownListItem a {
+    font: 300 16px "Overpass", sans-serif;
+    color: #4b5862;
+  }
+  .header__nav__link--cta {
+    margin-left: 1em;
+    padding: 0.75em 2vw;
+    background: #ffffff;
+    color: #ff525d;
+    text-align: center;
+  }
+
+  .section {
+    height: 100vh;
+    margin: 5em 0;
+    padding: 1em 10vw;
+    text-align: left;
+    overflow: hidden;
+  }
+  .section--intro {
+    height: 92vh;
+    margin: 0 0 5em 0;
+    background: url("../assets/bg-pattern-intro-desktop.svg") no-repeat 22% 55%, linear-gradient(120deg, #ff8f70 0%, #ff3d50 100%);
+    text-align: center;
+  }
+  .section--infra {
+    height: 50vh;
+    flex-direction: row;
+    justify-content: flex-end;
+    overflow: visible;
+  }
+  .section__body {
+    position: relative;
+    flex-direction: row;
+  }
+  .section__body--intro {
+    justify-content: center;
+  }
+  .section__body--infra {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 45%;
+  }
+  .section__body--flex {
+    justify-content: flex-start;
+  }
+  .section__body--flexEnd {
+    justify-content: flex-end;
+  }
+  .section__text--intro {
+    font-size: 24px;
+  }
+  .section__cta {
+    padding: 0.75em 1em;
+    width: initial;
+  }
+  .section__content {
+    width: 50%;
+    padding: 0;
+  }
+  .section__img--fit {
+    position: relative;
+    top: 0;
+    left: -10%;
+    width: 55%;
+    max-width: 645px;
+  }
+  .section__img--right {
+    position: absolute;
+    left: 55%;
+    height: 90vh;
+    width: 95%;
+    order: 2;
+    z-index: -2;
+    background: url("../assets/illustration-editor-desktop.svg") no-repeat center center/contain;
+  }
+  .section__img--left {
+    position: absolute;
+    left: -50%;
+    height: 90vh;
+    width: 95%;
+    z-index: -2;
+    background: url("../assets/illustration-laptop-desktop.svg") no-repeat center center/contain;
+  }
+  .section__img--left + .section__content {
+    justify-content: flex-end;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6em 10vw;
+    text-align: left;
+    gap: 12vw;
+  }
+  .footer__linkList {
+    margin: 0;
+  }
+  .footer__listTitle {
+    margin-top: 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
