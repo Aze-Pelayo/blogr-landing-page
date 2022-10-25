@@ -9,7 +9,6 @@
 	padding: 0;
 }
 
-
 hr {
 	width: 100%;
 	margin: 1em 0;
@@ -50,11 +49,17 @@ hr {
 	padding: 0 1em;
 	font: 600 18px $Overpass;
 	color: $dark-blue;
+	cursor: pointer;
 
 	@media screen and (min-width: 769px) {
 		font: 600 16px $Ubuntu;
 		font-size: 16px;
 		color: $white;
+
+		&:hover,
+		&:active {
+			text-decoration: underline;
+		}
 	}
 }
 
@@ -78,10 +83,10 @@ hr {
 	&__burgerButton {
 		height: 2.25em;
 		width: 2.25em;
-		cursor: pointer;
 		border: none;
 		background: url("../assets/icon-hamburger.svg") no-repeat center center/contain;
 		outline: none;
+		cursor: pointer;
 		transition: 0.2s ease;
 	}
 
@@ -175,9 +180,15 @@ hr {
 			margin: 1em 0;
 
 			a {
-				font: 600 16px $Overpass;
+				font: 300 16px $Overpass;
 				color: $d-grayish-blue;
 				text-decoration: none;
+				cursor: pointer;
+
+				&:hover,
+				&:active {
+					font-weight: 600;
+				}
 			}
 		}
 
@@ -196,6 +207,13 @@ hr {
 				);
 				font-size: 16px;
 				color: $white;
+
+				&:hover,
+				&:active {
+					background: $grayish-blue;
+					color: $white;
+					text-decoration: none;
+				}
 			}
 		}
 	}
@@ -274,10 +292,22 @@ hr {
 		font: 600 16px $Ubuntu;
 		text-decoration: none;
 
+		&:hover,
+		&:active {
+			background: $grayish-blue;
+			color: $white;
+		}
+
 		&--noBg {
 			border: 1px solid $white;
 			background: none;
 			color: $white;
+
+			&:hover,
+			&:active {
+				background: $white;
+				color: $light-red;
+			}
 		}
 	}
 
@@ -289,7 +319,7 @@ hr {
 		width: 100%;
 
 		&--intro {
-			flex-direction: row ;
+			flex-direction: row;
 			justify-content: center;
 		}
 
@@ -334,6 +364,13 @@ hr {
 		color: $white;
 		text-decoration: none;
 		line-height: 2em;
+		cursor: pointer;
+	}
+
+	&__link a:hover,
+	&__link a:focus,
+	&__link a:active {
+		text-decoration: underline;
 	}
 }
 
@@ -343,7 +380,6 @@ hr {
 	}
 
 	.section {
-
 		&__cta {
 			padding: 1em 1.5em;
 		}
@@ -521,7 +557,6 @@ hr {
 		}
 
 		&__img {
-
 			&--fit {
 				position: relative;
 				top: 0;
@@ -538,7 +573,7 @@ hr {
 				order: 2;
 				z-index: -2;
 				background: url("../assets/illustration-editor-desktop.svg") no-repeat center
-				center/contain;
+					center/contain;
 			}
 
 			&--left {
@@ -548,9 +583,9 @@ hr {
 				width: 95%;
 				z-index: -2;
 				background: url("../assets/illustration-laptop-desktop.svg") no-repeat center
-				center/contain;
+					center/contain;
 
-				&+.section__content {
+				& + .section__content {
 					justify-content: flex-end;
 				}
 			}
@@ -572,6 +607,5 @@ hr {
 		&__listTitle {
 			margin-top: 0;
 		}
-
 	}
 }

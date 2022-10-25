@@ -12,7 +12,7 @@ hr {
   width: 100%;
   margin: 1em 0;
   border: 0;
-  border-top: 0.5px solid #c8c8cb;
+  border-top: 0.5px solid #c8c8cb67;
 }
 
 .h1 {
@@ -60,10 +60,10 @@ hr {
 .header__burgerButton {
   height: 2.25em;
   width: 2.25em;
-  cursor: pointer;
   border: none;
   background: url("../assets/icon-hamburger.svg") no-repeat center center/contain;
   outline: none;
+  cursor: pointer;
   transition: 0.2s ease;
 }
 .header__burgerButton.active {
@@ -109,6 +109,7 @@ hr {
   padding: 0 1em;
   font: 600 18px "Overpass", sans-serif;
   color: #1f3f5b;
+  cursor: pointer;
   position: relative;
   border: none;
   background: none;
@@ -119,6 +120,9 @@ hr {
     font: 600 16px "Ubuntu", sans-serif;
     font-size: 16px;
     color: #ffffff;
+  }
+  .header__nav__dropdownBtn:hover, .header__nav__dropdownBtn:active {
+    text-decoration: underline;
   }
 }
 .header__nav__dropdownBtn::before {
@@ -147,7 +151,7 @@ hr {
   border-radius: 5px;
   list-style-type: none;
   text-align: center;
-  background-color: #c8c8cb;
+  background-color: #c8c8cb67;
 }
 .header__nav__dropdownList.expanded {
   display: block;
@@ -156,15 +160,20 @@ hr {
   margin: 1em 0;
 }
 .header__nav__dropdownListItem a {
-  font: 600 16px "Overpass", sans-serif;
+  font: 300 16px "Overpass", sans-serif;
   color: #4b5862;
   text-decoration: none;
+  cursor: pointer;
+}
+.header__nav__dropdownListItem a:hover, .header__nav__dropdownListItem a:active {
+  font-weight: 600;
 }
 .header__nav__link {
   margin: 0.5em 0;
   padding: 0 1em;
   font: 600 18px "Overpass", sans-serif;
   color: #1f3f5b;
+  cursor: pointer;
   text-decoration: none;
 }
 @media screen and (min-width: 769px) {
@@ -172,6 +181,9 @@ hr {
     font: 600 16px "Ubuntu", sans-serif;
     font-size: 16px;
     color: #ffffff;
+  }
+  .header__nav__link:hover, .header__nav__link:active {
+    text-decoration: underline;
   }
 }
 .header__nav__link--cta {
@@ -181,6 +193,11 @@ hr {
   background: linear-gradient(120deg, #ff8f70 0%, #ff3d50 100%);
   font-size: 16px;
   color: #ffffff;
+}
+.header__nav__link--cta:hover, .header__nav__link--cta:active {
+  background: #c8c8cb67;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .section {
@@ -245,10 +262,18 @@ hr {
   font: 600 16px "Ubuntu", sans-serif;
   text-decoration: none;
 }
+.section__cta:hover, .section__cta:active {
+  background: #c8c8cb67;
+  color: #ffffff;
+}
 .section__cta--noBg {
   border: 1px solid #ffffff;
   background: none;
   color: #ffffff;
+}
+.section__cta--noBg:hover, .section__cta--noBg:active {
+  background: #ffffff;
+  color: #ff7a85;
 }
 .section__body {
   display: flex;
@@ -296,6 +321,10 @@ hr {
   color: #ffffff;
   text-decoration: none;
   line-height: 2em;
+  cursor: pointer;
+}
+.footer__link a:hover, .footer__link a:focus, .footer__link a:active {
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 481px) {
