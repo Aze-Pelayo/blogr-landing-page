@@ -116,6 +116,7 @@ hr {
 }
 @media screen and (min-width: 769px) {
   .header__nav__dropdownBtn {
+    font: 600 16px "Ubuntu", sans-serif;
     font-size: 16px;
     color: #ffffff;
   }
@@ -168,6 +169,7 @@ hr {
 }
 @media screen and (min-width: 769px) {
   .header__nav__link {
+    font: 600 16px "Ubuntu", sans-serif;
     font-size: 16px;
     color: #ffffff;
   }
@@ -236,11 +238,11 @@ hr {
 }
 .section__cta {
   margin: 2em 0.5em;
-  padding: 1em 1.5em;
+  padding: 1em;
   border-radius: 30px;
   background: #ffffff;
   color: #ff525d;
-  font: 600 16px "Overpass", sans-serif;
+  font: 600 16px "Ubuntu", sans-serif;
   text-decoration: none;
 }
 .section__cta--noBg {
@@ -285,7 +287,7 @@ hr {
 }
 .footer__listTitle {
   margin: 1.5em 0;
-  font: 600 16px "Overpass", sans-serif;
+  font: 600 16px "Ubuntu", sans-serif;
   color: #ffffff;
 }
 .footer__link a {
@@ -301,6 +303,9 @@ hr {
     margin-top: 10vw;
   }
 
+  .section__cta {
+    padding: 1em 1.5em;
+  }
   .section__img {
     width: 80%;
   }
@@ -468,6 +473,21 @@ hr {
   }
   .section__img--left + .section__content {
     justify-content: flex-end;
+  }
+
+  .footer {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 6em 10vw;
+    text-align: left;
+    gap: 12vw;
+  }
+  .footer__linkList {
+    margin: 0;
+  }
+  .footer__listTitle {
+    margin-top: 0;
   }
 }
 

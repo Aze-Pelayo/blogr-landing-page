@@ -52,6 +52,7 @@ hr {
 	color: $dark-blue;
 
 	@media screen and (min-width: 769px) {
+		font: 600 16px $Ubuntu;
 		font-size: 16px;
 		color: $white;
 	}
@@ -266,11 +267,11 @@ hr {
 
 	&__cta {
 		margin: 2em 0.5em;
-		padding: 1em 1.5em;
+		padding: 1em;
 		border-radius: 30px;
 		background: $white;
 		color: $red;
-		font: 600 16px $Overpass;
+		font: 600 16px $Ubuntu;
 		text-decoration: none;
 
 		&--noBg {
@@ -323,7 +324,7 @@ hr {
 
 	&__listTitle {
 		margin: 1.5em 0;
-		font: 600 16px $Overpass;
+		font: 600 16px $Ubuntu;
 		color: $white;
 	}
 
@@ -342,6 +343,11 @@ hr {
 	}
 
 	.section {
+
+		&__cta {
+			padding: 1em 1.5em;
+		}
+
 		&__img {
 			width: 80%;
 
@@ -549,5 +555,23 @@ hr {
 				}
 			}
 		}
+	}
+
+	.footer {
+		flex-direction: row;
+		align-items: flex-start;
+		justify-content: flex-start;
+		padding: 6em 10vw;
+		text-align: left;
+		gap: 12vw;
+
+		&__linkList {
+			margin: 0;
+		}
+
+		&__listTitle {
+			margin-top: 0;
+		}
+
 	}
 }
