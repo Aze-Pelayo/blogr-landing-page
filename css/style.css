@@ -105,7 +105,7 @@ hr {
   text-align: center;
 }
 .header__nav__dropdownBtn {
-  margin: 0.5em 0;
+  margin: 1em 0;
   padding: 0 1em;
   font: 600 18px "Overpass", sans-serif;
   color: #1f3f5b;
@@ -134,30 +134,30 @@ hr {
   left: 90%;
   z-index: -1;
   background: url("../assets/icon-arrow-dark.svg") no-repeat;
-  transform: rotate(360deg);
+  transition: all 0.3s ease;
 }
 .header__nav__dropdownBtn.expanded {
   color: #4b5862;
 }
 .header__nav__dropdownBtn.expanded::before {
   top: 10%;
-  transform: rotate(180deg);
+  transform: rotate(-180deg);
 }
 .header__nav__dropdownList {
-  display: none;
-  padding: 1em;
+  max-height: 0;
   width: 100%;
-  margin: 1em 0;
   border-radius: 5px;
   list-style-type: none;
   text-align: center;
   background-color: #c8c8cb67;
+  overflow: hidden;
+  transition: max-height 0.2s ease;
 }
 .header__nav__dropdownList.expanded {
-  display: block;
+  max-height: 20em;
 }
 .header__nav__dropdownListItem {
-  margin: 1em 0;
+  margin: 1.5em 0;
 }
 .header__nav__dropdownListItem a {
   font: 300 16px "Overpass", sans-serif;
@@ -169,7 +169,7 @@ hr {
   font-weight: 600;
 }
 .header__nav__link {
-  margin: 0.5em 0;
+  margin: 1em 0;
   padding: 0 1em;
   font: 600 18px "Overpass", sans-serif;
   color: #1f3f5b;
@@ -400,16 +400,12 @@ hr {
     transform: rotate(180deg);
   }
   .header__nav__dropdownList {
-    display: none;
     position: absolute;
     width: 12em;
     margin: 1em;
     text-align: left;
     background-color: #ffffff;
     filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.1));
-  }
-  .header__nav__dropdownList.expanded {
-    display: block;
   }
   .header__nav__dropdownListItem {
     display: list-item;
