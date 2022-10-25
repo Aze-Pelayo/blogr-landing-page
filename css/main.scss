@@ -266,7 +266,7 @@ hr {
 
 	&__cta {
 		margin: 2em 0.5em;
-		padding: 1em 2.5em;
+		padding: 1em 1.5em;
 		border-radius: 30px;
 		background: $white;
 		color: $red;
@@ -359,11 +359,15 @@ hr {
 
 	.h1 {
 		margin-top: 0;
-		font-size: 48px;
+		font-size: 62px;
+	}
+
+	.h2 {
+		font-size: 36px;
 	}
 
 	.h3 {
-		font-size: 24px;
+		font-size: 28px;
 	}
 
 	.header {
@@ -440,7 +444,7 @@ hr {
 			&__link {
 				&--cta {
 					margin-left: 1em;
-					padding: 0.75em 2.5em;
+					padding: 0.75em 2vw;
 					background: $white;
 					color: $red;
 					text-align: center;
@@ -454,7 +458,7 @@ hr {
 		margin: 5em 0;
 		padding: 1em 10vw;
 		text-align: left;
-		overflow-x: hidden;
+		overflow: hidden;
 
 		&--intro {
 			height: 92vh;
@@ -462,6 +466,13 @@ hr {
 			background: url("../assets/bg-pattern-intro-desktop.svg") no-repeat 22% 55%,
 				linear-gradient(120deg, rgba(255, 143, 112, 1) 0%, rgba(255, 61, 80, 1) 100%);
 			text-align: center;
+		}
+
+		&--infra {
+			height: 50vh;
+			flex-direction: row;
+			justify-content: flex-end;
+			overflow: visible;
 		}
 
 		&__body {
@@ -472,6 +483,12 @@ hr {
 				justify-content: center;
 			}
 
+			&--infra {
+				flex-direction: column;
+				align-items: flex-start;
+				width: 45%;
+			}
+
 			&--flex {
 				justify-content: flex-start;
 			}
@@ -479,7 +496,12 @@ hr {
 			&--flexEnd {
 				justify-content: flex-end;
 			}
+		}
 
+		&__text {
+			&--intro {
+				font-size: 24px;
+			}
 		}
 
 		&__cta {
@@ -494,9 +516,17 @@ hr {
 
 		&__img {
 
+			&--fit {
+				position: relative;
+				top: 0;
+				left: -10%;
+				width: 55%;
+				max-width: 645px;
+			}
+
 			&--right {
 				position: absolute;
-				left: 50%;
+				left: 55%;
 				height: 90vh;
 				width: 95%;
 				order: 2;
